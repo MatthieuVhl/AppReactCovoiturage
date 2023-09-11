@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { postRegister } from '../../service/data.service';
-import { setToken } from './AuthSlice';
+import { post } from '../../service/data.service';
+import { setToken, setUser } from './AuthSlice';
 
 const RegistrationForm = () => {
 
@@ -23,11 +23,21 @@ const RegistrationForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postRegister("auth/register",formData).then(res =>{
-    dispatch(setToken(res.data.token))
-    }); 
+
+    let responseRegister = await post("auth/register",formData)
+
+    if(responseRegister != null){
+
+      dispatch(setToken(responseRegister.data.token))
+
+      let responseUser = await post("user/finduser",{email : formData.email},responseRegister.data.token)
+      
+      if(responseUser != null){
+        dispatch(setUser(responseUser.data))
+     }
+    }
   };
 
   return (

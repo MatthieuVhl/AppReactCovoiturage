@@ -10,7 +10,7 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to={`/createjourney`}>Créer ton trajet</NavLink>
+                  <NavLink className="nav-link" to={`/carride/add`}>Créer ton trajet</NavLink>
                 </li>
               </ul>
             </div>

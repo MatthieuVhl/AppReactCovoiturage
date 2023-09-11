@@ -14,13 +14,14 @@ const HomePage = () => {
     console.log('Passager:', passager);
   };
 
-  const token = useSelector((state) => state.auth.token)
-
-  useEffect(()=>{
-    if(token != null){
-      console.log(token)
-    }
-  })
+  // const token = useSelector((state) => state.auth.token)
+  // const user = useSelector((state) => state.auth.user)
+  // useEffect(()=>{
+  //   if(token != null && user !=null){
+  //     console.log(token)
+  //     console.log(user)
+  //   }
+  // })
 
   return (
     <div className="container">

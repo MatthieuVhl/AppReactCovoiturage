@@ -1,12 +1,12 @@
-.journey-form {
-    background-color: #f5f5f5;
+.carride-form {
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
   }
   
-  .journey-form h2 {
+  .carride-form h2 {
     font-size: 24px;
     margin-bottom: 20px;
   }
@@ -42,3 +42,19 @@
     justify-content: center;
     min-height: 80vh;
   }
+
+  .text{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    
+  }
+  .marge{
+    margin: 10px;
+  }
+
+.price{
+
+
+}

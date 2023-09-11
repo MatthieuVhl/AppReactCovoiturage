@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { postRegister } from '../../service/data.service';
-import { setToken } from './AuthSlice';
+import { post } from '../../service/data.service';
+import { setToken, setUser } from './AuthSlice';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     email: '',
@@ -20,13 +22,23 @@ const LoginPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postRegister("auth/login",formData).then(res =>{
-      dispatch(setToken(res.data.token))
-    }); 
-  };
 
+    let responseLogin = await post("auth/login",formData)
+
+    if(responseLogin != null){
+
+      dispatch(setToken(responseLogin.data.token))
+
+      let responseUser = await post("user/finduser",{email : formData.email},responseLogin.data.token)
+      
+      if(responseUser != null){
+        dispatch(setUser(responseUser.data))
+        navigate("/")
+     }
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit}>

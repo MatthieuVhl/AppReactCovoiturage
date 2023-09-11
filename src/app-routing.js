@@ -5,8 +5,9 @@ import HomePage from "./routes/HomePage/HomePage";
 import LoginPage from "./routes/Auth/LoginPage";
 import RegisterPage from "./routes/Auth/RegisterPage";
 
-import CreateJourneyPage from "./routes/CreateJourney/CreateJourneyPage";
-// import CarRidePage from "./routes/CarRidePage";
+import CreateCarRidePage from"./routes/CreateCarRide/CreateCarRidePage";
+import CarRidePage from "./routes/CarRide/CarRidePage";
+import ProtectedRoute from "./component/ProtectedRoute";
 
 
 const router = createBrowserRouter([
@@ -26,15 +27,16 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />
+      }, 
+      {
+        path:"/carride",
+        element:<CarRidePage/>,
+  
+      },
+      {
+        path:"/carride/add",
+        element:<ProtectedRoute><CreateCarRidePage/></ProtectedRoute> 
       }
-    //   {
-    //     path: "/createjourney",
-    //     element: <CreateJourneyPage/>
-    //   },
-    //   {
-    //     path:"/carride",
-    //     element:<CarRidePage/>
-    //   }
     ]
   }
 ])
