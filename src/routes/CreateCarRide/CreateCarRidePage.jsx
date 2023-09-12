@@ -33,7 +33,13 @@ const CreateCarRidePage = () => {
     e.preventDefault()
     let response = await post("car_ride/create",formData,token)
     if(response != null){
-      console.log(response.data)
+      setFormData({
+        start_point:'',
+        end_point: '',
+        startDateStr:'',
+        seatMax:0,
+        price:0
+      })
     }
   };
 

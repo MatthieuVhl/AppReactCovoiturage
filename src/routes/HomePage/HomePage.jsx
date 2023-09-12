@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-
 const HomePage = () => {
   const [depart, setDepart] = useState('');
   const [destination, setDestination] = useState('');
@@ -78,7 +76,9 @@ const HomePage = () => {
           Rechercher
         </button>
       </form>
+  
     </div>
+    
   );
 }
 

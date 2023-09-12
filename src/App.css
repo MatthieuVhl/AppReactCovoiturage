@@ -1,0 +1,12 @@
+.title{
+    margin-left: 15px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
