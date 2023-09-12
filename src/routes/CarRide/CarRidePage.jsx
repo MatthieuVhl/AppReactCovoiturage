@@ -4,7 +4,7 @@ import './CarRidePage.css';
 
 const CarRidePage = () => {
   const [formData, setFormData] = useState({
-   startride: '',
+    startride: '',
     arrivalride: '',
     citystart: '',
     cityarrival: '',
@@ -23,55 +23,40 @@ const CarRidePage = () => {
     // dispatch(setToken(res.data.token))
     // }); 
   };
- 
 
-    return (
+
+  return (
     <>
-    
-    <div class="card border-primary mb-3 carride-form text" >
-      <div class='form-group'>
-        <div class=" marge"> 
-         
-          Heure de départ : 
-        
+
+      <div className='globalContainerCarRide'>
+
+        <div class="card carride-form text" >
+          <div class='carRideContainer'>
+            <div class="start-end ">
+
+              <div class="postext">Heure de départ : </div>
+              <div class="postext"> Heure d' arrivée :</div>
+              <div class="postext"> Ville de départ :</div>
+              <div class="postext">Ville d' arrivée :</div>
+            </div>
+
+            <div className=" price">
+
+              Prix :
+
+
+            </div>
+
+          </div>
 
         </div>
-       
-        <div class=" marge"> 
-       
-          Heure d' arrivée :
-          
+      </div>
 
-        </div>
-      
-        <div  class=" marge "> 
-      
-          Ville de départ :
-          
 
-        </div>
-        
-        <div  class="marge  "> 
-        
-          Ville d' arrivée :
-          
 
-        </div>
-        </div>
-        <div  className=" price">
-      
-         Prix : 
-        
- 
-        </div>
-  
-        </div>
-         
-
-   
 
     </>
-    )
-  };
-  
-  export default CarRidePage;
+  )
+};
+
+export default CarRidePage;

@@ -4,10 +4,11 @@ import ErrorPage from "./routes/ErrorPage";
 import HomePage from "./routes/HomePage/HomePage";
 import LoginPage from "./routes/Auth/LoginPage";
 import RegisterPage from "./routes/Auth/RegisterPage";
-
 import CreateCarRidePage from"./routes/CreateCarRide/CreateCarRidePage";
 import CarRidePage from "./routes/CarRide/CarRidePage";
 import ProtectedRoute from "./component/ProtectedRoute";
+import CommentPage from "./routes/Comment/CommentPage";
+import ProfilPage from "./routes/Profil/ProfilPage";
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,15 @@ const router = createBrowserRouter([
       {
         path:"/carride/add",
         element:<ProtectedRoute><CreateCarRidePage/></ProtectedRoute> 
-      }
+      }, 
+    {
+      path:"/comment",
+      element: <CommentPage/>,
+    },
+    {
+      path:"/profil",
+      element:<ProfilPage/>
+    }
     ]
   }
 ])

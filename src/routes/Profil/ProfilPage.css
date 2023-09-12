@@ -1,0 +1,42 @@
+
+.profil-form {
+    background-color: #ffffff;
+    padding: 15em;
+    display: flex; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   
+  }
+
+  .profil-comment {
+    background-color: black;
+    display: flex; 
+    padding: 10em;
+     color: white;
+     border-radius: 5px;
+     
+   
+  }
+
+  .globalContainerProfil{
+    margin-top: 5em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .globalContainerProfilComment{
+    margin-top: 5em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+ 
+  
+  
+  
+ 
+  

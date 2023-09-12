@@ -1,18 +1,26 @@
 .carride-form {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+    width: 50%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
   }
-  
-  .carride-form h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+
+  .globalContainerCarRide{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  .form-group {
-    margin-bottom: 15px;
+ 
+  
+  .carRideContainer {
+    display: grid;
+    margin:10px;
+    align-items: center;
   }
   
   .form-control {
@@ -35,26 +43,32 @@
     background-color: #0056b3;
   }
   
-  .col-md-6.offset-md-3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-  }
+ 
 
   .text{
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     font-weight: bold;
     text-align: left;
     
+
+  }
+  .postext{
+margin-bottom: 15px;
   }
   .marge{
-    margin: 10px;
+    margin:1em;
   }
 
+
 .price{
+  grid-column:8;
+  grid-row: 1/ 5;
+
+}
+.start-end{
+flex-direction: column;
 
 
+  
 }
