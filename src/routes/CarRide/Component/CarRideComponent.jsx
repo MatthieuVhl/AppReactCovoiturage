@@ -13,26 +13,40 @@ const CarRideComponent = (props) => {
 
   const [status,setStatus]=useState(false)
 
-  const onClickHandler = async ()=>{
+  const [, updateState] = React.useState();
+  const forceUpdatecomponent = React.useCallback(() => updateState({}), []);
+
+  const onClickBookHandler = async ()=>{
     if(token != ""){
       const response = await get("booking/book_car_ride/"+user.id_user+"/"+props.id,token)
-      navigate("/")
     }
     else{
       navigate("/login")
     }
   }
 
+
+  const onClickUnBookHandler = async ()=>{
+    if(token != ""){
+      const response = await get("booking/unbook_car_ride/"+user.id_user+"/"+props.id,token)
+    }
+    else{
+      navigate("/login")
+    }
+  }
+
+  function alreadyBooked(booking) {
+    return (booking.carRide.id_carRide === props.id) && (booking.iduser === user.id_user)
+  }
+
   console.log(props.listBooking)
   useEffect(()=>{
-      //A REGARDER
     props.listBooking.forEach(b => {
-        if(b.id_User === user.id_user){
-          console.log(true)
+        if(alreadyBooked(b)){
           setStatus(true)
         }
       });
-  },[])
+  },[props.listBooking,user])
 
 
 
@@ -56,7 +70,10 @@ const CarRideComponent = (props) => {
               <div className=" price">Prix : {props.price}€</div>
             </div>
           
-            <button className={props.id_driver === user.id_user ? 'buttonBooking buttonBookingDisable' : props.places === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} onClick={onClickHandler} disabled={props.id_driver === user.id_user ? true : props.places === 0 ? true : status ? true :false} >Book</button>
+            <button 
+            className={props.id_driver === user.id_user ? 'buttonBooking buttonBookingDisable' : props.places === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} 
+            onClick={props.id_driver === user.id_user ? onClickUnBookHandler : props.places === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
+              {props.id_driver === user.id_user ? "Unbook" : props.places === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }</button>
             
           </div>
 

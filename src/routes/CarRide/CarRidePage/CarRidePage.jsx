@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { get } from "../../../service/data.service"
 import CarRideComponent from "../Component/CarRideComponent"
 import { useSelector } from "react-redux"
@@ -13,14 +13,21 @@ export default function CarRidePage (){
     const [list,setListe]=useState([])    
     const [listBooking,setListeBooking]=useState([])
 
-
     useEffect(()=>{
         fetchCarRide()
     },[])
 
     const fetchCarRide = async ()=>{
-        const response = await get("car_ride")
-        setListe([...response.data])
+
+        if(token == ""){
+            const response = await get("car_ride")
+            setListe([...response.data])
+        }
+        else{
+            const response = await get("car_ride/car_ride_without/"+user.id_user)
+            setListe([...response.data])
+        }
+       
 
         if(user.id_user != null){
             const responseBooking = await get("booking/user/"+user.id_user,token)
@@ -36,7 +43,7 @@ export default function CarRidePage (){
             list.length === 0?
             <div>No carRide</div>
             :
-            list.map((elem) => <CarRideComponent key={elem.id_carRide} id={elem.id_carRide} start={elem.start_point} id_driver={elem.id_user_driver}  end={elem.end_point} places={elem.seatAvailable} date={elem.startDate} price={elem.price} listBooking={listBooking}></CarRideComponent>)
+            list.map((elem) => <CarRideComponent key={elem.id_carRide} id={elem.id_carRide} start={elem.start_point} id_driver={elem.id_user_driver}  end={elem.end_point} places={elem.seatAvailable} date={elem.startDate} price={elem.price} listBooking={listBooking} forceUpdate={forceUpdate}></CarRideComponent>)
           }
             </div>
         </>
