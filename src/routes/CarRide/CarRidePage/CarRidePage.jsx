@@ -43,7 +43,7 @@ export default function CarRidePage (){
             list.length === 0?
             <div>No carRide</div>
             :
-            list.map((elem) => <CarRideComponent key={elem.id_carRide} id={elem.id_carRide} start={elem.start_point} id_driver={elem.id_user_driver}  end={elem.end_point} places={elem.seatAvailable} date={elem.startDate} price={elem.price} listBooking={listBooking} forceUpdate={forceUpdate}></CarRideComponent>)
+            list.map((elem) => <CarRideComponent key={elem.id_carRide} id={elem.id_carRide} start={elem.start_point} id_driver={elem.id_user_driver}  end={elem.end_point} places={elem.seatAvailable} date={elem.startDate} price={elem.price} listBooking={listBooking} ></CarRideComponent>)
           }
             </div>
         </>

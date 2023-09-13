@@ -1,33 +1,58 @@
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import Logo from './component/logoTuktuk';
 import "./App.css"
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from './routes/Auth/AuthSlice';
 
 function App() {
+
+  const token = useSelector((state) => state.auth.token)
+  const dispatch = useDispatch()
+
+  const onClikHandler = () => {
+    dispatch(logout());
+  }
+
   return (
     <div className="App">
       <header>
         <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
           <div className="container-fluid">
 
-            
+
             <Link className="navbar-brand link" to={`/`}>
-              <Logo/>
-               <div className='title'>tuKtuKGo</div></Link>
+              <Logo />
+              <div className='title'>tuKtuKGo</div></Link>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  <NavLink className="nav-link" to={`/carride/add`}>Créer ton trajet</NavLink>
-                </li>
+                {
+                  token !== "" ?
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to={`/carride/add`}>Créer ton trajet</NavLink>
+                    </li>
+                    :
+                    <></>
+                }
+
                 <li>
-                <NavLink className="nav-link" to={`/carride`}>Trajets</NavLink>
+                  <NavLink className="nav-link" to={`/carride`}>Trajets</NavLink>
                 </li>
               </ul>
             </div>
             <div className="ml-auto">
-              <div className="btn-group">
-                <Link to="/login" className="btn btn-primary">Login</Link>
-                <Link to="/register" className="btn btn-primary">Register</Link>
-              </div>
+              {
+                token === "" ?
+                  <div className="btn-group">
+                    <Link to="/login" className="btn btn-primary rounded mx-2">Login</Link>
+                    <Link to="/register" className="btn btn-primary rounded">Register</Link>
+                  </div>
+                  :
+                  <div className="btn-group">
+                    <Link to="/profil" className="btn btn-primary rounded mx-2">Profil</Link>
+                    <button onClick={onClikHandler} className="btn btn-primary rounded">LogOut</button>
+                  </div>
+              }
+
             </div>
           </div>
         </nav>

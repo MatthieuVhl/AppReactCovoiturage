@@ -13,12 +13,11 @@ const CarRideComponent = (props) => {
 
   const [status,setStatus]=useState(false)
 
-  const [, updateState] = React.useState();
-  const forceUpdatecomponent = React.useCallback(() => updateState({}), []);
 
   const onClickBookHandler = async ()=>{
     if(token != ""){
       const response = await get("booking/book_car_ride/"+user.id_user+"/"+props.id,token)
+      navigate("/")
     }
     else{
       navigate("/login")
@@ -29,6 +28,7 @@ const CarRideComponent = (props) => {
   const onClickUnBookHandler = async ()=>{
     if(token != ""){
       const response = await get("booking/unbook_car_ride/"+user.id_user+"/"+props.id,token)
+      navigate("/")
     }
     else{
       navigate("/login")
