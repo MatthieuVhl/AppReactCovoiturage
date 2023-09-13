@@ -80,7 +80,7 @@ const CarRideComponent = (props) => {
           
           {
             props.comment &&
-            <button className='buttonComment' onClick={onCLickCommentHandler}>Comment</button>
+            <button className='buttonComment' onClick={onCLickCommentHandler}>Comment <i class="bi bi-arrow-right-circle"></i></button>
           }
           {
             props.delete &&

@@ -37,15 +37,13 @@ export default function CarRidePage (){
 
 
     return(
-        <>
-            <div>     
+        <> 
           {
             list.length === 0?
             <div>No carRide</div>
             :
             list.map((elem) => <CarRideComponent key={elem.id_carRide} carRide={elem} listBooking={listBooking} isBooking={true} ></CarRideComponent>)
           }
-            </div>
         </>
     )
 }

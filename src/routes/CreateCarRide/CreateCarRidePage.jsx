@@ -104,6 +104,7 @@ const CreateCarRidePage = () => {
               </div>
 
               <div className="mb-3">
+                {/* <label htmlFor="">price</label> */}
                 <input
                   type="number"
                   className="form-control"
@@ -118,8 +119,8 @@ const CreateCarRidePage = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary">
-                Create
+              <button type="submit" className="btn btn1">
+                Create <i class="bi bi-plus"></i>
               </button>
             </form>
           </div>

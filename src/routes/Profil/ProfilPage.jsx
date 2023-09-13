@@ -37,12 +37,12 @@ const ProfilPage = () => {
 
                 <div className=" profil-form " >
                     <div className='profilContainer'>
-
+                    <i class="bi bi-file-person-fill"style={{fontSize:60}}></i>
                         <div className='nameProfil'>   {user.lastname} {user.firstname}</div>
-                        <div className='textProfil'>Email : {user.email}</div>
+                        <div className='textProfil'><i class="bi bi-envelope-at-fill"></i> Email : {user.email}</div>
                      
-                        <div className='textProfil'>Phone : {user.phone}</div>
-                        <div className='textProfil'>Role : {user.role === 1 ? 'User' : 'Admin'}</div>
+                        <div className='textProfil'><i class="bi bi-telephone-fill"></i> Phone : {user.phone}</div>
+                        <div className='textProfil'><i class="bi bi-person-fill-gear"></i> Role : {user.role === 1 ? 'User' : 'Admin'}</div>
                         </div>
                 </div>   
             </div>

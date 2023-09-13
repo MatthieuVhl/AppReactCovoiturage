@@ -1,9 +1,11 @@
 
+
 .profil-form {
-    background-color: #ffffff;
+   background-color: rgba(0, 0, 0, 0);
     width: 50%;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.623);
+    color: white;
   }
 
   .profil-comment {
@@ -15,21 +17,22 @@
   }
 
   .profil-Booking{
-    background-color: #ffffff;
+    background-color:#52787a71;
     display: flex; 
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.527);
   }
 
   .profilContainer{
     display: flex;
     flex-direction: column  ;
     width: 100%;
-    margin-bottom: 2rem;
     align-items: center;
     text-align: center;
+   border: black;
+    border-radius: 2em;
   }
 
   .nameProfil{
@@ -48,6 +51,10 @@
     text-align: center;
     margin-top: 10px;
   }
+  .postext{
+    margin: 1px;
+    font-size: large;
+  }
 
   .globalContainerProfil{
     margin-top: 5em;
@@ -56,6 +63,14 @@
     justify-content: center;
     align-items: center;
   }
+  .profilContainer{
+    background-color: rgb(189, 141, 11);
+    font-size: large;
+    border-radius: 5px;
+    
+  }
+
+  
   
   
  

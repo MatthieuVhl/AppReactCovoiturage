@@ -14,9 +14,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    < >
       <header>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary nav" data-bs-theme="dark">
+        <nav className="navbar navbar-expand-lg  nav" data-bs-theme="dark">
           <div className="container-fluid">
 
 
@@ -28,14 +28,14 @@ function App() {
                 {
                   token !== "" ?
                     <li className="nav-item">
-                      <NavLink className="nav-link" to={`/carride/add`}>Créer ton trajet</NavLink>
+                      <NavLink className="nav-link" to={`/carride/add`}><i class="bi bi-plus-circle-fill"></i> Créer ton trajet</NavLink>
                     </li>
                     :
                     <></>
                 }
 
                 <li>
-                  <NavLink className="nav-link" to={`/carride`}>Trajets</NavLink>
+                  <NavLink className="nav-link" to={`/carride`}><i class="bi bi-car-front-fill"></i> Trajets</NavLink>
                 </li>
               </ul>
             </div>
@@ -48,8 +48,8 @@ function App() {
                   </div>
                   :
                   <div className="btn-group">
-                    <Link to="/profil" className="btn rounded mx-2 btn3">Profil</Link>
-                    <button onClick={onClikHandler} className="btn rounded btn2">LogOut</button>
+                    <Link to="/profil" className="btn rounded mx-2 btn3"><i class="bi bi-person-fill"></i> Profil</Link>
+                    <button onClick={onClikHandler} className="btn rounded btn2"><i class="bi bi-power"></i> LogOut</button>
                   </div>
               }
 
@@ -57,14 +57,12 @@ function App() {
           </div>
         </nav>
       </header>
-      <div className="container">
-        <div className="row my-3">
-          <div >
+      <div className="container-add">
+        <div className="row">
             <Outlet />
-          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
