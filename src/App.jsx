@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary nav" data-bs-theme="dark">
           <div className="container-fluid">
 
 
@@ -43,13 +43,13 @@ function App() {
               {
                 token === "" ?
                   <div className="btn-group">
-                    <Link to="/login" className="btn btn-primary rounded mx-2">Login</Link>
-                    <Link to="/register" className="btn btn-primary rounded">Register</Link>
+                    <Link to="/login" className="btn rounded mx-2 btn1">Login</Link>
+                    <Link to="/register" className="btn rounded btn2">Register</Link>
                   </div>
                   :
                   <div className="btn-group">
-                    <Link to="/profil" className="btn btn-primary rounded mx-2">Profil</Link>
-                    <button onClick={onClikHandler} className="btn btn-primary rounded">LogOut</button>
+                    <Link to="/profil" className="btn rounded mx-2 btn3">Profil</Link>
+                    <button onClick={onClikHandler} className="btn rounded btn2">LogOut</button>
                   </div>
               }
 

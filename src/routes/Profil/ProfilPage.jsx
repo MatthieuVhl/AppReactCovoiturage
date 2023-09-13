@@ -52,7 +52,7 @@ const ProfilPage = () => {
                 <div className='profil-Booking'>
                 <div className='textBooking'>Booking :</div>
                             {
-                                listBooking.map((elem) =><CarRideComponent key={elem.carRide.id_carRide} carRide={elem.carRide} listBooking={listBooking} comment={true}></CarRideComponent>)
+                                listBooking.map((elem) =><CarRideComponent key={elem.carRide.id_carRide} carRide={elem.carRide} listBooking={listBooking} comment={true} isBooking={true}></CarRideComponent>)
                             }
                         </div>
             </div>
@@ -62,7 +62,7 @@ const ProfilPage = () => {
                 <div className='profil-Booking'>
                 <div className='textBooking'>My Ride :</div>
                             {
-                                listCarRide.map((elem) =><CarRideComponent key={elem.id_carRide}  carRide={elem} listBooking={listBooking} delete={true} isBooking={true} ></CarRideComponent>)
+                                listCarRide.map((elem) =><CarRideComponent key={elem.id_carRide}  carRide={elem} listBooking={listBooking} delete={true}  ></CarRideComponent>)
                             }
                         </div>
             </div>
