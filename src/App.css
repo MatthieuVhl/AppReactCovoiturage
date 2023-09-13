@@ -1,4 +1,70 @@
 .title{
+  
+    margin-left: 15px;
+    
+    font-weight: bold;
+    color: black;
+}
+
+.link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+.nav{
+    background-color: rgb(219, 237, 253);
+   
+}
+.btn{
+    font-size: 20px;
+    border-color: rgba(95, 93, 93, 0.329);
+    color: white;
+    
+}
+.btn1{
+    background-color: green;
+    
+
+}
+.btn2{
+    background-color: red;
+}
+.btn3{
+    background-color: rgb(235, 199, 0);
+}
+.nav-link {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight:500;
+    color: black;
+}
+
+.titleHome{
+    text-align: center;
+    font-size: 5em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.767);
+    
+}
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin: 0;
+   padding: 0;
+
+
+
+}
+.container{
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  margin: 0;
+    padding: 0;
+}.title{
     margin-left: 15px;
     font-size: 28px;
     font-weight: bold;

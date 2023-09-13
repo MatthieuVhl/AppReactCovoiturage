@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
+import { useSelector } from 'react-redux';
+import HomeImg from '../../component/homeTuktuk';
+import image from "../../asset/hometuktuk.jpg";
+
+=======
+>>>>>>> ad659bfedf99d06528402f81c1de3b212f352345
 const HomePage = () => {
   const [depart, setDepart] = useState('');
   const [destination, setDestination] = useState('');
@@ -22,59 +29,22 @@ const HomePage = () => {
   // })
 
   return (
-    <div className="container">
-      <h1 className="my-4">Réservez votre voyage</h1>
+    <div style={{backgroundImage : `url(${image})` }}>
+      <h1 className="my-4 titleHome">Bienvenu sur le site tuKtuKGo</h1>
+      
       <form className="form">
         <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            id="depart"
-            placeholder="Départ"
-            value={depart}
-            onChange={(e) => setDepart(e.target.value)}
-          />
+        
+         
         </div>
   
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            id="destination"
-            placeholder="Destination"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          />
-        </div>
+        
   
-        <div className="form-group">
-          <input
-            type="date"
-            className="form-control"
-            id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </div>
+       
   
-        <div className="form-group">
-          <input
-            type="number"
-            className="form-control"
-            id="passager"
-            placeholder="Nombre de passagers"
-            value={passager}
-            onChange={(e) => setNombre(e.target.value)}
-          />
-        </div>
+       
   
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={handleRecherche}
-        >
-          Rechercher
-        </button>
+       
       </form>
   
     </div>
