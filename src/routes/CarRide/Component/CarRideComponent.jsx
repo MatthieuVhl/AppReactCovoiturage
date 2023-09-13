@@ -13,10 +13,11 @@ const CarRideComponent = (props) => {
 
   const [status,setStatus]=useState(false)
 
+  console.log(props.carRide.id_carRide)
 
   const onClickBookHandler = async ()=>{
     if(token != ""){
-      const response = await get("booking/book_car_ride/"+user.id_user+"/"+props.id,token)
+      const response = await get("booking/book_car_ride/"+user.id_user+"/"+props.carRide.id_carRide,token)
       navigate("/")
     }
     else{
@@ -27,7 +28,7 @@ const CarRideComponent = (props) => {
 
   const onClickUnBookHandler = async ()=>{
     if(token != ""){
-      const response = await get("booking/unbook_car_ride/"+user.id_user+"/"+props.id,token)
+      const response = await get("booking/unbook_car_ride/"+user.id_user+"/"+props.carRide.id_carRide,token)
       navigate("/")
     }
     else{
@@ -35,18 +36,26 @@ const CarRideComponent = (props) => {
     }
   }
 
-  function alreadyBooked(booking) {
-    return (booking.carRide.id_carRide === props.id) && (booking.iduser === user.id_user)
+  const onCLickCommentHandler = ()=>{
+    navigate("/comment/"+props.carRide.id_carRide)
   }
 
-  console.log(props.listBooking)
+  const onCLickDeleteHandler = async ()=>{
+    const response = await get("car_ride/delete/"+props.carRide.id_carRide,token)
+    navigate("/")
+  }
+
+  function alreadyBooked(booking) {
+    return (booking.carRide.id_carRide === props.carRide.id_carRide) && (booking.iduser === user.id_user)
+  }
+
   useEffect(()=>{
     props.listBooking.forEach(b => {
         if(alreadyBooked(b)){
           setStatus(true)
         }
       });
-  },[props.listBooking,user])
+  },[])
 
 
 
@@ -59,20 +68,35 @@ const CarRideComponent = (props) => {
           <div className='carRideContainer'>
 
             <div className="start-end ">
-              <div className="postext"> Ville de départ : {props.start}</div>
-              <div className="postext">Ville d' arrivée : {props.end}</div>
-              <div className="postext">Nombre de places : {props.places}</div>
-              <div className="postext"> date : {props.date}</div>
+              <div className="postext"> Ville de départ : {props.carRide.start_point}</div>
+              <div className="postext">Ville d' arrivée : {props.carRide.end_point}</div>
+              <div className="postext">Nombre de places : {props.carRide.seatAvailable}</div>
+              <div className="postext"> date : {props.carRide.startDate}</div>
             </div>
 
             <div className='priceContainer'>
-              <div className=" price">Prix : {props.price}€</div>
+              <div className=" price">Prix : {props.carRide.price}€</div>
             </div>
           
+          {
+            props.comment &&
+            <button className='buttonComment' onClick={onCLickCommentHandler}>Comment</button>
+          }
+          {
+            props.delete &&
+            <button className='buttonDelete' onClick={onCLickDeleteHandler}>Delete</button>
+          }
+            
+
+          {
+            props.isBooking && 
             <button 
-            className={props.places === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} 
-            onClick={props.places === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
-              {props.places === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }</button>
+            className={props.carRide.seatAvailable === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} 
+            onClick={props.carRide.seatAvailable === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
+            {props.carRide.seatAvailable === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }
+            </button>
+          }
+           
             
           </div>
 

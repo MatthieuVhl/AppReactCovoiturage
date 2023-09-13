@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element:<ProtectedRoute><CreateCarRidePage/></ProtectedRoute> 
       }, 
     {
-      path:"/comment",
+      path:"/comment/:id",
       element: <CommentPage/>,
     },
     {

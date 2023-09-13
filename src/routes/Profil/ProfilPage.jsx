@@ -9,6 +9,7 @@ const ProfilPage = () => {
     const user = useSelector((state) => state.auth.user)
 
     const [listBooking,setListeBooking]=useState([])
+    const [listCarRide,setListCarRide]=useState([])
 
     const fetchBooking = async()=>{
         if(user.id_user != null){
@@ -17,9 +18,17 @@ const ProfilPage = () => {
         }   
     }
 
+    const fetchCarRide = async ()=>{
+        if(user.id_user != null){
+            const responseCarRide = await get("car_ride/car_ride/"+user.id_user,token)
+            setListCarRide([...responseCarRide.data])
+        }   
+    }
+
     useEffect(()=>{
         fetchBooking()
-    })
+        fetchCarRide()
+    },[])
 
     return (
         <>
@@ -33,7 +42,7 @@ const ProfilPage = () => {
                         <div className='textProfil'>Email : {user.email}</div>
                      
                         <div className='textProfil'>Phone : {user.phone}</div>
-                        <div >Role : {user.role === 1 ? 'User' : 'Admin'}</div>
+                        <div className='textProfil'>Role : {user.role === 1 ? 'User' : 'Admin'}</div>
                         </div>
                 </div>   
             </div>
@@ -43,7 +52,17 @@ const ProfilPage = () => {
                 <div className='profil-Booking'>
                 <div className='textBooking'>Booking :</div>
                             {
-                                listBooking.map((elem) =><CarRideComponent key={elem.carRide.id_carRide} id={elem.carRide.id_carRide} start={elem.carRide.start_point} id_driver={elem.carRide.id_user_driver}  end={elem.carRide.end_point} places={elem.carRide.seatAvailable} date={elem.carRide.startDate} price={elem.carRide.price} listBooking={listBooking} ></CarRideComponent>)
+                                listBooking.map((elem) =><CarRideComponent key={elem.carRide.id_carRide} carRide={elem.carRide} listBooking={listBooking} comment={true}></CarRideComponent>)
+                            }
+                        </div>
+            </div>
+
+
+            <div className='globalContainerProfil'>
+                <div className='profil-Booking'>
+                <div className='textBooking'>My Ride :</div>
+                            {
+                                listCarRide.map((elem) =><CarRideComponent key={elem.id_carRide}  carRide={elem} listBooking={listBooking} delete={true} isBooking={true} ></CarRideComponent>)
                             }
                         </div>
             </div>
