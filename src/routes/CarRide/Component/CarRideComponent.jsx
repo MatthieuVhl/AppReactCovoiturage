@@ -57,9 +57,8 @@ const CarRideComponent = (props) => {
 
         <div className="card carride-form text" >
           <div className='carRideContainer'>
-            <div className="start-end ">
 
-           
+            <div className="start-end ">
               <div className="postext"> Ville de départ : {props.start}</div>
               <div className="postext">Ville d' arrivée : {props.end}</div>
               <div className="postext">Nombre de places : {props.places}</div>
@@ -71,9 +70,9 @@ const CarRideComponent = (props) => {
             </div>
           
             <button 
-            className={props.id_driver === user.id_user ? 'buttonBooking buttonBookingDisable' : props.places === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} 
-            onClick={props.id_driver === user.id_user ? onClickUnBookHandler : props.places === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
-              {props.id_driver === user.id_user ? "Unbook" : props.places === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }</button>
+            className={props.places === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} 
+            onClick={props.places === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
+              {props.places === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }</button>
             
           </div>
 
