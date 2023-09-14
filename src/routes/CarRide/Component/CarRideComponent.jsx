@@ -13,12 +13,10 @@ const CarRideComponent = (props) => {
 
   const [status,setStatus]=useState(false)
 
-  console.log(props.carRide.id_carRide)
-
   const onClickBookHandler = async ()=>{
     if(token != ""){
-      const response = await get("booking/book_car_ride/"+user.id_user+"/"+props.carRide.id_carRide,token)
-      navigate("/")
+      await get("booking/book_car_ride/"+user.id_user+"/"+props.carRide.id_carRide,token)
+      setStatus(true)
     }
     else{
       navigate("/login")
@@ -28,8 +26,8 @@ const CarRideComponent = (props) => {
 
   const onClickUnBookHandler = async ()=>{
     if(token != ""){
-      const response = await get("booking/unbook_car_ride/"+user.id_user+"/"+props.carRide.id_carRide,token)
-      navigate("/")
+      await get("booking/unbook_car_ride/"+user.id_user+"/"+props.carRide.id_carRide,token)
+      setStatus(false)
     }
     else{
       navigate("/login")
@@ -41,20 +39,26 @@ const CarRideComponent = (props) => {
   }
 
   const onCLickDeleteHandler = async ()=>{
-    const response = await get("car_ride/delete/"+props.carRide.id_carRide,token)
+    await get("car_ride/delete/"+props.carRide.id_carRide,token)
     navigate("/")
   }
 
-  function alreadyBooked(booking) {
-    return (booking.carRide.id_carRide === props.carRide.id_carRide) && (booking.iduser === user.id_user)
+
+  const isBooked = async ()=>{
+    if(token !== ""){
+      const response = await get("booking/isbooked/"+user.id_user+"/"+props.carRide.id_carRide,token)
+      if(response.data === ""){
+        setStatus(false)
+      }
+      else{
+        setStatus(true)
+      }
+    }
+
   }
 
   useEffect(()=>{
-    props.listBooking.forEach(b => {
-        if(alreadyBooked(b)){
-          setStatus(true)
-        }
-      });
+    isBooked()
   },[])
 
 
