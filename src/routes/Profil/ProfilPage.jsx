@@ -3,6 +3,7 @@ import './ProfilPage.css';
 import { useEffect, useState } from 'react';
 import { get } from '../../service/data.service';
 import CarRideComponent from '../CarRide/Component/CarRideComponent';
+import CommentComponent from '../Comment/Component/CommentComponent';
 const ProfilPage = () => {
 
     const token = useSelector((state) => state.auth.token)
@@ -10,6 +11,7 @@ const ProfilPage = () => {
 
     const [listBooking,setListeBooking]=useState([])
     const [listCarRide,setListCarRide]=useState([])
+    const [listComment,setListComment]=useState([])
 
     const fetchBooking = async()=>{
         if(user.id_user != null){
@@ -25,9 +27,17 @@ const ProfilPage = () => {
         }   
     }
 
+    const fetchComment = async ()=>{
+        if(user.id_user != null){
+            const responseComment = await get("comment/usercomment/"+user.id_user,token)
+            setListComment([...responseComment.data])
+        }   
+    }
+
     useEffect(()=>{
         fetchBooking()
         fetchCarRide()
+        fetchComment()
     },[])
 
     return (
@@ -71,6 +81,9 @@ const ProfilPage = () => {
             <div className='globalContainerProfil'></div>
               <div className='profil-comment'>
                         Commentaire :
+                        {
+                                listComment.map((elem) =><CommentComponent key={elem.idComment} comment={elem}  ></CommentComponent>)
+                        }
                       </div>
         </>
 
