@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { post } from '../../service/data.service';
 import { setToken, setUser } from './AuthSlice';
+import "./LoginPage.css"
 
 const RegistrationForm = () => {
 
@@ -41,8 +42,8 @@ const RegistrationForm = () => {
   };
 
   return (
-    
-      <form onSubmit={handleSubmit}>
+    <div className='AuthContainer'>
+      <form onSubmit={handleSubmit} className='formLoginContainer'>
         <div className="mb-3">
           <label htmlFor="lastname" className="form-label">
             Lastname
@@ -118,11 +119,13 @@ const RegistrationForm = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn2">
           Register
         </button>
 
       </form>
+    </div>
+     
   );
 }
 

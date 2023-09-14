@@ -1,0 +1,14 @@
+.noCarride{
+
+margin-top: 5rem;
+font-weight: bold;
+font-size: 2em;
+}
+
+.messageContainer{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

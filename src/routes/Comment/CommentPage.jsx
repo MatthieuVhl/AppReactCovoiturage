@@ -69,14 +69,15 @@ const CommentPage = () => {
       <div className='globaleContainerComment'>
        <div className='commentContainer'>
         <div className='comment-form '>
-          <div className='text '>commentaire:</div>
+          <div className='textCommentTitle'><i class="bi bi-chat-left-text-fill mx-2"> </i>commentaire:</div>
           <form onSubmit={onSubmitHandler} >
 
           <div className="mb-3">
+            <label htmlFor="note" className='textComment'>Note (out of ten):</label>
                 <input
                   type="number"
                   className="form-control"
-                  min={0} max={10} step={0.1}
+                  min={0} max={10} step={0.1} 
                   id="note"
                   name="note"
                   placeholder='note'
@@ -87,6 +88,7 @@ const CommentPage = () => {
               </div>
 
               <div>
+                <label htmlFor="comment" className='textComment'>comment :</label>
                 <textarea 
                 className='comment-avis' 
                 id="comment"
@@ -98,7 +100,7 @@ const CommentPage = () => {
                 ></textarea>
               </div>
             
-            <button className='btn-comment' >Valider</button>
+            <button className='btn-comment' >Valider <i class="bi bi-check"></i></button>
 
           </form>
            

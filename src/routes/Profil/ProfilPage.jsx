@@ -80,10 +80,12 @@ const ProfilPage = () => {
 
             <div className='globalContainerProfil'></div>
               <div className='profil-comment'>
-                        Commentaire :
-                        {
-                                listComment.map((elem) =><CommentComponent key={elem.idComment} comment={elem}  ></CommentComponent>)
+                      <div className='titleComment'> Commentaire :</div>     
+
+                    <div className='commentProfil'>    {
+                                listComment.map((elem) =><CommentComponent key={elem.idComment} comment={elem} ></CommentComponent>)
                         }
+                        </div> 
                       </div>
         </>
 

@@ -58,9 +58,7 @@ function App() {
         </nav>
       </header>
       <div className="container-add">
-        <div className="row">
             <Outlet />
-        </div>
       </div>
     </>
   );

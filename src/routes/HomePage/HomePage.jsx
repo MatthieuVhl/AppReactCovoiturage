@@ -10,8 +10,7 @@ const HomePage = () => {
       <div className="container-fluid-homepage ">
 
 <div className="d-flex justify-content-center align-items-start min-vh-100">
-{/* 
-  <div className="main-content"> */}
+
 
   
 
@@ -19,16 +18,12 @@ const HomePage = () => {
  
 
 </div>
- <h1 className="titleHome">Bienvenu sur le site tuKtuKGo</h1>
+ <h1 className="titleHome">Bienvenue sur le site tuKtuKGo</h1>
     </>
   
 
-    // </div>
-  
-    /* <div className='homePage' style={{backgroundImage : `url(${image})` }}>
-      <h1 className="my-4 titleHome">Bienvenu sur le site tuKtuKGo</h1> */
-    // </div>
+ 
   );
-}
+  }
 
 export default HomePage;

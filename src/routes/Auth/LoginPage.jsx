@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { post } from '../../service/data.service';
 import { setToken, setUser } from './AuthSlice';
 import { useNavigate } from 'react-router-dom';
+import "./LoginPage.css"
 
 const LoginPage = () => {
 
@@ -41,42 +42,45 @@ const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-    <div className="mb-3">
-      <label htmlFor="email" className="form-label">
-        Email
-      </label>
-      <input
-        type="email"
-        className="form-control"
-        id="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
+    <div className='AuthContainer'>
+        <form onSubmit={handleSubmit} className='formLoginContainer'>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn btn1">
+          Login
+        </button>
+
+      </form>
     </div>
-
-    <div className="mb-3">
-      <label htmlFor="password" className="form-label">
-        Password
-      </label>
-      <input
-        type="password"
-        className="form-control"
-        id="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        required
-      />
-    </div>
-
-    <button type="submit" className="btn btn-primary">
-      Login
-    </button>
-
-  </form>
+    
   );
 };
 

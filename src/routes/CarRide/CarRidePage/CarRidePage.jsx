@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { get } from "../../../service/data.service"
 import CarRideComponent from "../Component/CarRideComponent"
 import { useSelector } from "react-redux"
+import { NavLink } from "react-router-dom"
+import "./CarRidePage.css"
 
 
 
@@ -40,7 +42,13 @@ export default function CarRidePage (){
         <> 
           {
             list.length === 0?
-            <div>No carRide</div>
+            <>
+            <div className="messageContainer">
+                <div className="noCarride">No Car Ride available</div>
+                <NavLink className="nav-link" to={`/carride/add`}><i class="bi bi-plus-circle-fill"></i> Créer ton trajet</NavLink>
+            </div>
+            
+            </>
             :
             list.map((elem) => <CarRideComponent key={elem.id_carRide} carRide={elem} listBooking={listBooking} isBooking={true} ></CarRideComponent>)
           }

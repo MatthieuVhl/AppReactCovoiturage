@@ -49,9 +49,10 @@ const CreateCarRidePage = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3 my-5">
           <div className="journey-form">
-            <h2>Créer un nouveau voyage</h2>
+            <h2>Create your car ride</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
+              <label htmlFor="start_point" className='labelFormCarRide'>  Start Point :</label>
                 <input
                   type="text"
                   className="form-control"
@@ -65,6 +66,7 @@ const CreateCarRidePage = () => {
               </div>
 
               <div className="mb-3">
+              <label htmlFor="end_point" className='labelFormCarRide'> End Point :</label>
                 <input
                   type="text"
                   className="form-control"
@@ -78,6 +80,7 @@ const CreateCarRidePage = () => {
               </div>
 
               <div className="mb-3">
+              <label htmlFor="startDateStr" className='labelFormCarRide'> Date :</label>
                 <input
                   type="date"
                   className="form-control"
@@ -90,6 +93,7 @@ const CreateCarRidePage = () => {
               </div>
 
               <div className="mb-3">
+              <label htmlFor="seatMax" className='labelFormCarRide'>Number Of PLace :</label>
                 <input
                   type="number"
                   className="form-control"
@@ -104,7 +108,7 @@ const CreateCarRidePage = () => {
               </div>
 
               <div className="mb-3">
-                {/* <label htmlFor="">price</label> */}
+              <label htmlFor="price" className='labelFormCarRide'> Price :</label>
                 <input
                   type="number"
                   className="form-control"

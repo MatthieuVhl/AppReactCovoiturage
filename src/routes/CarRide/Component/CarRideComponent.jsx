@@ -72,33 +72,35 @@ const CarRideComponent = (props) => {
           <div className='carRideContainer'>
 
             <div className="start-end ">
-              <div className="postext"> Ville de départ : {props.carRide.start_point}</div>
-              <div className="postext">Ville d' arrivée : {props.carRide.end_point}</div>
-              <div className="postext">Nombre de places : {props.carRide.seatAvailable}</div>
-              <div className="postext"> date : {props.carRide.startDate}</div>
+              <div className="postext">Departure point : {props.carRide.start_point}</div>
+              <div className="postext">End point : {props.carRide.end_point}</div>
+              <div className="postext">Numbers of places : {props.carRide.seatAvailable}</div>
+              <div className="postext">Date : {props.carRide.startDate}</div>
             </div>
 
             <div className='priceContainer'>
-              <div className=" price">Prix : {props.carRide.price}€</div>
+              <div className=" price">Price : {props.carRide.price}€</div>
             </div>
           
           {
             props.comment &&
             <button className='buttonComment' onClick={onCLickCommentHandler}>Comment <i class="bi bi-arrow-right-circle"></i></button>
           }
-          {
-            props.delete &&
-            <button className='buttonDelete' onClick={onCLickDeleteHandler}>Delete</button>
+         {
+            props.delete && 
+            <button className='buttonDelete' onClick={onCLickDeleteHandler}>Delete <i class="bi bi-trash"></i></button>
           }
             
 
           {
             props.isBooking && 
-            <button 
-            className={props.carRide.seatAvailable === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBooking'} 
-            onClick={props.carRide.seatAvailable === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
-            {props.carRide.seatAvailable === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }
-            </button>
+            <div className='positionBtnCard'> 
+              <button 
+              className={props.carRide.seatAvailable === 0 ? 'buttonBooking buttonBookingDisable' : status ? 'buttonBooking buttonBookingDisable' : 'buttonBookingbook'} 
+              onClick={props.carRide.seatAvailable === 0 ? onClickUnBookHandler  : status ? onClickUnBookHandler :onClickBookHandler } >
+              {props.carRide.seatAvailable === 0 ? "Unbook"  : status ? "Unbook"  :"Book" }
+              </button>
+            </div>
           }
            
             

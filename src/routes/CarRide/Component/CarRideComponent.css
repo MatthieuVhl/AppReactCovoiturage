@@ -6,6 +6,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(10, 10, 10, 0.356);
     text-align: center;
+    margin-bottom: 20px;
   }
 
   .globalContainerCarRide{
@@ -14,16 +15,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
  
-  
   .carRideContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3fr 2fr 2fr;
-    margin:5px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    margin:25px;
     align-items: center;
+    
   }
   
   .form-control {
@@ -38,9 +40,7 @@
     font-weight: bold;
     text-align: left;
   }
-  
-  
-  
+   
 
 
 .priceContainer{
@@ -74,11 +74,16 @@ background-color: white;
 }
 
 .buttonDelete{
-  border: transparent;
+  margin-left: 3em;
+ height: 4em;
+ width: 6em;
   border-radius:8px ;
-  background-color: rgb(139, 22, 18);
-  color: white;
+  border-color:rgb(139, 22, 18);
+  background-color: rgb(112, 0, 0);
+ color: white;
+ font-weight: bold;
  
+  
   
 }
 
@@ -87,5 +92,28 @@ background-color: white;
 }
 
 .buttonBookingDisable{
+  grid-column: 1 / 3;
+ margin-top: 1em;
+  height: 3em;
   background-color: rgb(122, 0, 0);
+     width: 50%;
+  font-weight: bold;
+  
+}
+.buttonBookingbook{
+  border-radius: 5px;
+  border: transparent;
+  color: white;
+  margin-top: 1em;
+   height: 3em;
+   background-color: rgb(2, 4, 124);
+   width: 50%;
+   font-weight: bold;
+}
+.positionBtnCard{
+  grid-column: 1 / 3;
+  display:flex ;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
