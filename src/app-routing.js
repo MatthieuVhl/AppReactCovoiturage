@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       }, 
     {
       path:"/comment/:id",
-      element: <CommentPage/>,
+      element: <ProtectedRoute><CommentPage/></ProtectedRoute>,
     },
     {
       path:"/profil",
