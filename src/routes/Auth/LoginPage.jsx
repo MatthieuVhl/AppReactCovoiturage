@@ -44,7 +44,7 @@ const LoginPage = () => {
     <form onSubmit={handleSubmit}>
     <div className="mb-3">
       <label htmlFor="email" className="form-label">
-        Adresse e-mail
+        Email
       </label>
       <input
         type="email"
@@ -59,7 +59,7 @@ const LoginPage = () => {
 
     <div className="mb-3">
       <label htmlFor="password" className="form-label">
-        Mot de passe
+        Password
       </label>
       <input
         type="password"
@@ -73,7 +73,7 @@ const LoginPage = () => {
     </div>
 
     <button type="submit" className="btn btn-primary">
-      Connection
+      Login
     </button>
 
   </form>

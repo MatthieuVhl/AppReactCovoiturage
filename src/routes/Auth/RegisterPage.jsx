@@ -45,7 +45,7 @@ const RegistrationForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="lastname" className="form-label">
-            Nom
+            Lastname
           </label>
           <input
             type="text"
@@ -60,7 +60,7 @@ const RegistrationForm = () => {
 
         <div className="mb-3">
           <label htmlFor="firstname" className="form-label">
-            Prénom
+            firstname
           </label>
           <input
             type="text"
@@ -75,7 +75,7 @@ const RegistrationForm = () => {
 
         <div className="mb-3">
           <label htmlFor="phone" className="form-label">
-            Téléphone
+            Phone
           </label>
           <input
             type="text"
@@ -90,7 +90,7 @@ const RegistrationForm = () => {
       
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Adresse e-mail
+            Email
           </label>
           <input
             type="email"
@@ -105,7 +105,7 @@ const RegistrationForm = () => {
 
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
-            Mot de passe
+            Password
           </label>
           <input
             type="password"
@@ -119,7 +119,7 @@ const RegistrationForm = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          S'enregistrer
+          Register
         </button>
 
       </form>
