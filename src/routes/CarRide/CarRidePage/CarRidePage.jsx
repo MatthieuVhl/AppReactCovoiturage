@@ -45,7 +45,7 @@ export default function CarRidePage (){
             <>
             <div className="messageContainer">
                 <div className="noCarride">No Car Ride available</div>
-                <NavLink className="nav-link" to={`/carride/add`}><i class="bi bi-plus-circle-fill"></i> Créer ton trajet</NavLink>
+                <NavLink className="nav-link" to={`/carride/add`}><i class="bi bi-plus-circle-fill"></i> Create your Car Ride</NavLink>
             </div>
             
             </>

@@ -28,14 +28,14 @@ function App() {
                 {
                   token !== "" ?
                     <li className="nav-item">
-                      <NavLink className="nav-link" to={`/carride/add`}><i class="bi bi-plus-circle-fill"></i> Créer ton trajet</NavLink>
+                      <NavLink className="nav-link" to={`/carride/add`}><i class="bi bi-plus-circle-fill"></i> Create your Car Ride</NavLink>
                     </li>
                     :
                     <></>
                 }
 
                 <li>
-                  <NavLink className="nav-link" to={`/carride`}><i class="bi bi-car-front-fill"></i> Trajets</NavLink>
+                  <NavLink className="nav-link" to={`/carride`}><i class="bi bi-car-front-fill"></i> Car Ride</NavLink>
                 </li>
               </ul>
             </div>
